@@ -1,0 +1,107 @@
+package com.model;
+
+import java.time.LocalDate;
+
+public class Product {
+	
+	private Long id;
+	private String name;
+	private String type;
+	private int price;
+	private int quantity;
+	private LocalDate targetDate;
+	
+	protected Product() {
+		
+	}
+	
+	public Product(long id, String name, String type, int price, int quantity, LocalDate targetDate) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.price = price;
+		this.quantity = quantity;
+		this.targetDate = targetDate;
+	}
+
+	public Product(String name, String type, int price, int quantity, LocalDate targetDate) {
+		super();
+		this.name = name;
+		this.type = type;
+		this.price = price;
+		this.quantity = quantity;
+		this.targetDate = targetDate;
+	}
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public LocalDate getTargetDate() {
+		return targetDate;
+	}
+
+	public void setTargetDate(LocalDate targetDate) {
+		this.targetDate = targetDate;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (id ^ (id >>> 32));
+		return result;
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Product other = (Product) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+}
